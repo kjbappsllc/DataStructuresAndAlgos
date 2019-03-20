@@ -22,7 +22,7 @@ export const binaryArraySort = (array) => {
     return Array(zeroes).fill(0).concat(Array(array.length - zeroes).fill(1))
 }
 
-export const largestConsecutiveSubArray = (array) => {
+export const largestConsecutiveSubSequence = (array) => {
     const cache = {}
     array.forEach(element => {
         const rightIndex = element + 1
@@ -47,4 +47,23 @@ export const largestConsecutiveSubArray = (array) => {
     return Object.values(cache).reduce((acc, curr) => {
         return curr > acc ? curr : acc
     }, 0)
+}
+
+export const maximumLengthSubArray = (array, S) => {
+    const cache = {}
+    let sum = 0
+    let len = 0
+    let ending_index = -1
+    cache[sum] = -1
+    for(let [index, element] of array.entries()) {
+        sum += element
+        if(cache[sum] == void 0) {
+            cache[sum] = index
+        }
+        if(cache[sum - S] != void 0 && len < index - cache[sum - S]) {
+            len = index - cache[sum - S]
+            ending_index = index
+        }
+    }
+    return array.slice(ending_index - len + 1, ending_index + 1)
 }
