@@ -15,6 +15,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 var pairWithSum = function pairWithSum(array, sum) {
   var cache = {};
+  var pairs = [];
   var _iteratorNormalCompletion = true;
   var _didIteratorError = false;
   var _iteratorError = undefined;
@@ -26,7 +27,7 @@ var pairWithSum = function pairWithSum(array, sum) {
           element = _step$value[1];
 
       if (cache[sum - element] != void 0) {
-        return [cache[sum - element], index];
+        pairs.push([cache[sum - element], index]);
       }
 
       cache[element] = index;
@@ -45,6 +46,8 @@ var pairWithSum = function pairWithSum(array, sum) {
       }
     }
   }
+
+  return pairs;
 };
 
 exports.pairWithSum = pairWithSum;
