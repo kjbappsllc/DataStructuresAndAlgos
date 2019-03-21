@@ -6,6 +6,8 @@ var _graphs = require("./graphs");
 
 var _arrays = require("./arrays");
 
+var _backtracking = require("./backtracking");
+
 //Arrays
 console.log("Pair With Sum: ", (0, _arrays.pairWithSum)([1, 4, 2, 5, 9, 3, 5, 3], 10));
 console.log("Binary Array Sort: ", (0, _arrays.binaryArraySort)([1, 1, 1, 0, 0, 0, 0, 1, 0, 1]));
@@ -29,4 +31,5 @@ weightedG.addEdge(1, 4, 2), weightedG.addEdge(2, 3, 1);
 weightedG.addEdge(2, 0, 9);
 weightedG.addEdge(3, 0, 2);
 weightedG.addEdge(4, 1, 3);
-console.log(weightedG.graph);
+var mockBoard = [[1, 1, 3, 1, 0, 1, 1], [1, 3, 0, 0, 1, 1, 1], [1, 1, 1, 1, 3, 1, 1], [1, 1, 1, 0, 0, 0, 1], [0, 0, 1, 1, 1, 1, 3]];
+(0, _backtracking.shortPathToGivenGoals)(mockBoard, 0, 0);

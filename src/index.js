@@ -6,6 +6,7 @@ import {
     maximumLengthSubArray,
     largestConsecutiveSubSequence
 } from './arrays'
+import { shortPathToGivenGoals } from './backtracking'
 
 //Arrays
 console.log("Pair With Sum: ", pairWithSum([1,4,2,5,9,3,5,3], 10))
@@ -33,3 +34,13 @@ weightedG.addEdge(2, 3, 1)
 weightedG.addEdge(2, 0, 9)
 weightedG.addEdge(3, 0, 2)
 weightedG.addEdge(4, 1, 3)
+
+const mockBoard = [
+    [1,1,3,1,0,1,1],
+    [1,3,0,0,1,1,1],
+    [1,1,1,1,3,1,1],
+    [1,1,1,0,0,0,1],
+    [0,0,1,1,1,1,3]
+]
+
+shortPathToGivenGoals(mockBoard, 0, 0)

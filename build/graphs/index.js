@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.DFS = exports.BFS = void 0;
+exports.Dijkstra = exports.DFS = exports.BFS = void 0;
 
 var BFS = function BFS(graph, start) {
   var visited = Array(Object.keys(graph).length).fill(false);
@@ -83,3 +83,10 @@ var DFS = function DFS(graph, start) {
 };
 
 exports.DFS = DFS;
+
+var Dijkstra = function Dijkstra(graph, start) {
+  var visited = Array(Object.keys(graph).length).fill(false);
+  var distances = {};
+};
+
+exports.Dijkstra = Dijkstra;
