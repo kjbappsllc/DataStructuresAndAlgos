@@ -28,10 +28,6 @@ var shortPathToGivenGoals = function shortPathToGivenGoals(board, startX, startY
 
   var findPath = function findPath(x, y, visited, paths) {
     if (board[y][x] === 3 && !visited[y][x]) {
-      console.log("GOALL: ", {
-        x: x,
-        y: y
-      });
       visited[y][x] = 3;
       shortestPaths["goal".concat(x, ",").concat(y)] = paths;
       return;
@@ -48,10 +44,6 @@ var shortPathToGivenGoals = function shortPathToGivenGoals(board, startX, startY
     if (isValid(x, y + 1) && isSafe(visited, x, y + 1)) {
       var _newPath = [].concat(_toConsumableArray(paths), ["DOWN"]);
 
-      console.log("Valid to Go Down", {
-        x: x,
-        y: y
-      });
       findPath(x, y + 1, visited, _newPath);
     }
 
